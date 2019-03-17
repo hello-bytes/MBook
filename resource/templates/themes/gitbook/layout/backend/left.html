@@ -1,0 +1,13 @@
+{{ define "backend.left" }}
+<div>
+    <div style="height:40px;margin-top:7px;margin-bottom:7px;margin-left:15px;">
+        <img style="width:40px;" src="{{ themeAssets "/assets/img/backend-logo.png" }}" />
+        <span style="font-size: 22px;height:40px;line-height: 40px;">MBook</span><span style="font-size: 12px;color:#ccc;">(Markdown Book)</span>
+    </div>
+    <ul class="custom-nav">
+        <li class="{{if eq "/backend/index" .__RequestUrl__}}active{{end}}"><a href="/backend/index"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Dashboard</a></li>
+        <li class="{{if eq "/backend/config" .__RequestUrl__}}active{{end}}"><a href="/backend/config"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;配置信息</a></li>
+        <li class="{{if eq "/backend/operator" .__RequestUrl__}}active{{end}}"><a href="/backend/operator"><span class="glyphicon glyphicon-th"></span>&nbsp;&nbsp;维护 & 操作</a></li>
+    </ul>
+</div>
+{{ end }}

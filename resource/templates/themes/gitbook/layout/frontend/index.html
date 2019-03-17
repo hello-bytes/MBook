@@ -1,0 +1,15 @@
+{{ define "index" }}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    {{ template "header" }}
+  </head>
+  <body>
+    {{ template "navbar" . }}
+
+    {{ include .pageTemplate . }}
+    
+    {{ template "footer" . }}
+  </body>
+</html>
+{{ end }}

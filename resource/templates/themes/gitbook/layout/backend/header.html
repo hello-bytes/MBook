@@ -1,0 +1,24 @@
+{{ define "backend.header" }}
+<meta charset="utf-8">
+<title>MBook 文档中心</title>
+<link rel="shortcut ico" type="image/png" href="/assets/img/favicon.png" />
+<link rel="icon" href="/assets/img/favicon.ico" />
+<script src="{{ localAssets "/assets/lib/jquery/3.1.1/jquery.min.js" }}"></script>
+
+<script src="{{ localAssets "/assets/lib/bootstrap/3.3.7/js/bootstrap.min.js" }}"></script>
+<link href="{{ localAssets "/assets/lib/bootstrap/3.3.7/css/bootstrap.min.css" }}" rel="stylesheet">
+<link href="{{ localAssets "/assets/lib/bootstrap/3.3.7/css/bootstrap-theme.min.css" }}" rel="stylesheet">
+
+<script src="{{ localAssets "/assets/lib/bootstrap/table/1.12.1/bootstrap-table.min.js" }}"></script>
+<link href="{{ localAssets "/assets/lib/bootstrap/table/1.12.1/bootstrap-table.min.css" }}" rel="stylesheet">
+
+<script src="{{ localAssets "/assets/lib/bootstrap/dialog/js/bootstrap-dialog.min.js" }}"></script>
+<link href="{{ localAssets "/assets/lib/bootstrap/dialog/css/bootstrap-dialog.min.css" }}" rel="stylesheet">
+
+<!-- code preview -->
+<link rel="stylesheet" href="{{localAssets "/assets/lib/highlight/styles/googlecode.css"}}"/>
+<script src="{{localAssets "/assets/lib/highlight/highlight.pack.js"}}"></script>
+
+<script src="{{ themeAssets "/assets/js/backend.js" }}"></script>
+<link href="{{ themeAssets "/assets/css/backend-index.css" }}" rel="stylesheet"></link>
+{{ end }}

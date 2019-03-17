@@ -1,0 +1,71 @@
+<div style="position: relative;padding:0px;margin:0px;margin-top:80px;">
+    <div id="leftTree" name="leftTree" onscroll="onTreeScroll()" style="width:300px;position: fixed;overflow-y: scroll; left: 0px;top:50px;bottom: 0px;background-color: #fafafa;border-right: 1px solid rgba(0,0,0,.07);">
+        <ul class="summary" style="margin-left:-15px!important;">
+            {{ .CatalogueHtml }}
+        </ul>
+    </div>
+    <div style="margin-left: 300px;">
+        <div class="content-wrap">
+            <div id="content" class="content">
+                <div id="posts" class="posts-expand" style="margin:30px;">
+                    <article class="post post-type-normal" style="width:800px;margin:0px auto;">
+                        <div id="post-body" class="post-body" style="font-size: 15px;word-wrap: break-word;">
+                            {{ .ArticleContent }}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+var globalUrl = "";
+function initGlobalUrl(){
+    globalUrl = "";
+    var pathName = window.document.location.pathname;
+    var segments = pathName.split("/");
+    for(var i = 0 ;i<segments.length;i++){
+        if(segments[i] == "" || typeof(segments[i]) == "undefined") {
+        segments.splice(i,1);
+        i= i-1;
+        }
+    }
+
+    if(segments.length > 0){
+        globalUrl = segments[0];
+    }
+}
+function onTreeScroll(){
+    var scrollTop = $("#leftTree").scrollTop();
+    setTreeScrollCookie(globalUrl,scrollTop);
+}
+
+function setTreeScrollCookie(name,value){
+    var Days = 30;
+    var exp = new Date();
+    exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+
+function getTreeScrollCookie(name){
+    var arr,reg=new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg)){
+    return unescape(arr[2]);
+    }
+    return 0;
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+    });
+
+    initGlobalUrl();
+
+    try {
+        var pos = getTreeScrollCookie(globalUrl);
+        $("#leftTree").scrollTop(pos);
+    } catch (error) {
+    }
+});
+</script>

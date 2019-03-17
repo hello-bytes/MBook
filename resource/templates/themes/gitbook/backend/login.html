@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+        <meta charset="utf-8">
+        <title>MBook 文档中心</title>
+        <link rel="shortcut ico" type="image/png" href="/assets/img/favicon.png" />
+        <script src="{{ localAssets "/assets/lib/jquery/3.1.1/jquery.min.js" }}"></script>
+        
+        <script src="{{ localAssets "/assets/lib/bootstrap/3.3.7/js/bootstrap.min.js" }}"></script>
+        <link href="{{ localAssets "/assets/lib/bootstrap/3.3.7/css/bootstrap.min.css" }}" rel="stylesheet">
+        <link href="{{ localAssets "/assets/lib/bootstrap/3.3.7/css/bootstrap-theme.min.css" }}" rel="stylesheet">
+        
+        <script src="{{ localAssets "/assets/lib/bootstrap/table/1.12.1/bootstrap-table.min.js" }}"></script>
+        <link href="{{ localAssets "/assets/lib/bootstrap/table/1.12.1/bootstrap-table.min.css" }}" rel="stylesheet">
+        
+        <script src="{{ localAssets "/assets/lib/bootstrap/dialog/js/bootstrap-dialog.min.js" }}"></script>
+        <link href="{{ localAssets "/assets/lib/bootstrap/dialog/css/bootstrap-dialog.min.css" }}" rel="stylesheet">
+        
+        <!-- code preview -->
+        <link rel="stylesheet" href="{{localAssets "/assets/lib/highlight/styles/googlecode.css"}}"/>
+        <script src="{{localAssets "/assets/lib/highlight/highlight.pack.js"}}"></script>
+        
+        <script src="{{ localAssets "/assets/js/index.js" }}"></script>
+        <link href="{{ localAssets "/assets/css/index.css" }}" rel="stylesheet"></link>
+  </head>
+  <body style="background-color:#efefef!important;">
+      <div style="height:150px;"></div>
+      <div style="width:500px;margin:0px auto;background: #fff;">
+        <form style="padding:10px;" method="post" action="/backend/login.do">
+            <label style="text-align:center;">输入<b>SecurityKey</b>登录到管理后台</label>
+            <input id="sk" name="sk" class="form-control" placeholder=""/>
+            <div style="height:10px;"></div>
+            <div style="text-align:right;">
+                <button type="submit" class="btn btn-success">进入到后台</button>
+            </div>
+        </form>
+      </div>
+  </body>
+</html>

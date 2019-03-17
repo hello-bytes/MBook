@@ -1,0 +1,37 @@
+{{ define "backend" }}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    {{ template "backend.header" }}
+  </head>
+  <body class="backend">
+      <div class="backend-content-main">
+        <div class="backend-content-left">
+          {{ template "backend.left" . }}
+        </div>
+        <div class="backend-content-right">
+            {{ template "backend.rigthtop" }}
+            <div style="padding:15px;">
+              {{ include .pageTemplate . }}            
+            </div>
+        </div>
+      </div>
+
+      <div id="reboot-dialog" class="modal bs-example-modal-lg" tabindex="-1" role="dialog" style="color:#000;">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title">正在重启</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>重启成功后，页面会自动刷新...</p>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-primary disabled">请等待操作完成...</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </body>
+</html>
+{{ end }}

@@ -1,0 +1,12 @@
+{{ define "article" }}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    {{ template "header" }}
+  </head>
+  <body>
+    {{ template "navbar" . }}
+    {{ include .pageTemplate . }}
+  </body>
+</html>
+{{ end }}

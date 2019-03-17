@@ -1,0 +1,11 @@
+<div style="height:60px;"></div>
+<div class="content">
+    <div style="height:30px;"></div>
+    <ul>
+        {{ range .CodeBookList }}
+            <li>
+                <a href="{{ .url }}">{{ .name }}</a>
+            </li>
+        {{ end }}
+    </ul>
+</div>
